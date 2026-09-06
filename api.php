@@ -25,6 +25,26 @@ switch ($action) {
         }
         echo json_encode($projects);
         break;
+        // ============ CREATE ============
+    // Receives form data via POST, inserts into database
+    case 'create':
+        // Get data from the POST request
+        $title = $conn->real_escape_string($_POST['title']);
+        $desc  = $conn->real_escape_string($_POST['description']);
+        $tech  = $conn->real_escape_string($_POST['tech']);
+        $link  = $conn->real_escape_string($_POST['link']);
+
+        // Insert into database
+        $conn->query("INSERT INTO projects (title, description, tech, link) 
+                      VALUES ('$title', '$desc', '$tech', '$link')");
+
+        // Return success + the new ID
+        echo json_encode([
+            'success' => true, 
+            'id' => $conn->insert_id,
+            'message' => 'Project created!'
+        ]);
+        break;
 
     default:
         echo json_encode(['error' => 'Unknown action']);
