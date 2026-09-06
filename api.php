@@ -45,6 +45,24 @@ switch ($action) {
             'message' => 'Project created!'
         ]);
         break;
+        // ============ UPDATE ============
+    // Receives form data + project ID, updates that row
+    case 'update':
+        $id    = (int)$_POST['id'];  // (int) = force it to be a number
+        $title = $conn->real_escape_string($_POST['title']);
+        $desc  = $conn->real_escape_string($_POST['description']);
+        $tech  = $conn->real_escape_string($_POST['tech']);
+        $link  = $conn->real_escape_string($_POST['link']);
+
+        $conn->query("UPDATE projects 
+                      SET title='$title', description='$desc', tech='$tech', link='$link' 
+                      WHERE id=$id");
+
+        echo json_encode([
+            'success' => true,
+            'message' => 'Project updated!'
+        ]);
+        break;
 
     default:
         echo json_encode(['error' => 'Unknown action']);
