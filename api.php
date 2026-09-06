@@ -64,6 +64,18 @@ switch ($action) {
         ]);
         break;
 
+    // ============ DELETE ============
+    // Receives a project ID, deletes that row
+    case 'delete':
+        $id = (int)$_POST['id'];
+        $conn->query("DELETE FROM projects WHERE id=$id");
+
+        echo json_encode([
+            'success' => true,
+            'message' => 'Project deleted!'
+        ]);
+        break;
+
     default:
         echo json_encode(['error' => 'Unknown action']);
 }
