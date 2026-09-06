@@ -1,0 +1,316 @@
+/* ============ RESET & BASE ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============ LAYOUT ============ */
+header, section, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ============ HERO ============ */
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: #38bdf8;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    margin-bottom: 0.3rem;
+}
+
+.sub {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: #334155;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.btn-delete {
+    background: #dc2626;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+.btn-small {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+}
+
+/* ============ ABOUT ============ */
+.about {
+    background: #1e293b;
+    border-radius: 12px;
+    margin: 0 auto 1rem;
+    border: 1px solid #334155;
+}
+
+.about h2 {
+    color: #38bdf8;
+    margin-bottom: 0.8rem;
+}
+
+.about p {
+    color: #94a3b8;
+}
+
+/* ============ PROJECTS GRID ============ */
+.projects-section h2,
+.admin-list-section h2 {
+    color: #38bdf8;
+    margin-bottom: 1rem;
+}
+
+#project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+}
+
+.loading {
+    color: #64748b;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ============ PROJECT CARDS ============ */
+.card {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    color: #f8fafc;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.card-desc {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background: #1e3a5f;
+    color: #38bdf8;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ============ CONTACT ============ */
+.contact {
+    text-align: center;
+    background: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    margin-top: 1rem;
+}
+
+.contact h2 {
+    color: #38bdf8;
+    margin-bottom: 0.5rem;
+}
+
+.contact p {
+    color: #94a3b8;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    text-align: center;
+    color: #475569;
+    font-size: 0.85rem;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* ============ FORM ============ */
+.form-section {
+    background: #1e293b;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    margin-bottom: 1rem;
+}
+
+.form-section h2 {
+    color: #38bdf8;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.3rem;
+}
+
+input, textarea {
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* ============ ADMIN LIST ============ */
+.admin-card {
+    background: #1e293b;
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #334155;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.admin-card-info {
+    flex: 1;
+}
+
+.admin-card-info strong {
+    color: #f8fafc;
+    font-size: 1.05rem;
+    margin-right: 0.5rem;
+}
+
+.tech-badge-small {
+    background: #1e3a5f;
+    color: #38bdf8;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+.admin-card-desc {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.admin-card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.8rem; }
+    #project-grid { grid-template-columns: 1fr; }
+    .admin-card { flex-direction: column; align-items: flex-start; }
+}
